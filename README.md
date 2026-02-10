@@ -1,16 +1,25 @@
-# React + Vite
+# Sabores de Casa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a static HTML/CSS implementation of the "Sabores de Casa" restaurant website, featuring:
+*   A fully responsive design using HTML5 and Tailwind CSS.
+*   Two main pages:
+    *   **Home (`index.html`):** Hero section, "About Us", Top Recipes, Location map, and Newsletter.
+    *   **Recipes (`recipes.html`):** A filterable grid of recipes with sticky navigation.
+*   No build process required - simply open the HTML files in your browser.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  Clone the repository.
+2.  Open `index.html` in your preferred web browser to view the homepage.
+3.  Navigate to the Recipes page via the "Ver Menú" link or the navigation bar.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   HTML5
+*   Tailwind CSS (via CDN)
+*   Google Fonts (Noto Serif, Work Sans)
+*   Material Icons & Symbols
 
-## Expanding the ESLint configuration
+## Deployment
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Since this is a static site, it can be deployed to any static hosting service (GitHub Pages, Netlify, Vercel, etc.) by uploading the files.
