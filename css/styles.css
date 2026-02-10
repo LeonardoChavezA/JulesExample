@@ -1,0 +1,40 @@
+/* Custom Styles for Sabores de Casa */
+
+.wood-texture {
+    /* Background image is relative to the CSS file, so we go up one level to img/ */
+    background-image: url('../img/wood-texture.jpg');
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Menu Checkbox Hack */
+#mobile-menu-toggle:checked ~ #mobile-menu {
+    display: block;
+}
+
+#mobile-menu {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: flex !important;
+    }
+}
+
+/* Hide scrollbar for category list */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

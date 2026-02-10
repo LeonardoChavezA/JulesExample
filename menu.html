@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 
     <script>
         tailwind.config = {
@@ -28,97 +29,56 @@
             },
         }
     </script>
-    <style>
-        .wood-texture {
-            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCKAFhiMYrE2Kl7aG4dztnJreKDMbEHgHlyIkux95LFETu7yXIYV-of1r7FqSKZFK_AmnKh1ZeGh3RNL9LUSiL8weL7S3cwWjXN5CJ4Dm_T6Y74PJ0KVJf6IjGNNvIGkpPRER_ojOKX_0TbzGXrGKDhWPIxYGTmr4h7nf73gGOj_ha74dhFrpATSbXiv5nD0F5n5d7I8r12wFe8OXA5jaS23NZRbTn-83V2yYipDMCK-46VphfKBXKoEYI2EiZiCnYLEHQXCrh6qg);
-            background-blend-mode: overlay;
-            background-size: cover;
-        }
-        .glass-morphism {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        /* Hide scrollbar for category list */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Mobile Menu Checkbox Hack */
-        #mobile-menu-toggle:checked ~ #mobile-menu {
-            display: block;
-        }
-        #mobile-menu {
-            display: none;
-        }
-        @media (min-width: 768px) {
-            #mobile-menu {
-                display: flex !important;
-            }
-        }
-    </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-sans text-background-dark dark:text-background-light selection:bg-primary/30 min-h-screen">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 w-full z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/10">
-        <div class="px-6 py-4 flex justify-between items-center relative">
-            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <span class="text-primary text-2xl"><i class="material-icons">restaurant</i></span>
-                <span class="font-bold text-xl tracking-tight text-primary font-display">Sabores de Casa</span>
-            </a>
+    <header>
+        <nav class="sticky top-0 w-full z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/10">
+            <div class="px-6 py-4 flex justify-between items-center relative">
+                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="text-primary text-2xl"><i class="material-icons">restaurant</i></span>
+                    <span class="font-bold text-xl tracking-tight text-primary font-display">Sabores de Casa</span>
+                </a>
 
-            <!-- Search (Desktop) -->
-            <div class="hidden md:flex flex-1 max-w-md mx-8 relative">
-                <input type="text" placeholder="Buscar recetas..." class="w-full bg-white dark:bg-white/5 border border-primary/10 rounded-full px-4 py-2 pl-10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow">
-                <i class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</i>
+                <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
+
+                <label for="mobile-menu-toggle" class="md:hidden text-primary cursor-pointer p-2 hover:bg-primary/10 rounded transition-colors">
+                    <i class="material-icons text-3xl">menu</i>
+                </label>
+
+                <div id="mobile-menu" class="absolute md:static top-full left-0 w-full md:w-auto bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-none border-primary/10 p-6 md:p-0 flex-col md:flex-row gap-6 md:gap-8 items-center font-medium shadow-lg md:shadow-none">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Inicio</a>
+                    <a href="menu.html" class="text-primary font-bold hover:text-primary/80 transition-colors">Menú</a>
+                    <a href="recetas/churros.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Churros</a>
+                    <a href="recetas/flan.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Flan</a>
+                    <a href="recetas/tacos.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Tacos</a>
+                    <a href="#" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-bold shadow-md shadow-primary/20 w-full md:w-auto text-center block md:inline-block">Reservar</a>
+                </div>
             </div>
-
-            <!-- Checkbox Hack Trigger -->
-            <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
-
-            <label for="mobile-menu-toggle" class="md:hidden text-primary cursor-pointer p-2 hover:bg-primary/10 rounded transition-colors">
-                <i class="material-icons text-3xl">menu</i>
-            </label>
-
-            <!-- Menu Items -->
-            <div id="mobile-menu" class="absolute md:static top-full left-0 w-full md:w-auto bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-none border-primary/10 p-6 md:p-0 flex-col md:flex-row gap-6 md:gap-8 items-center font-medium shadow-lg md:shadow-none">
-                <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Inicio</a>
-                <a href="recipes.html" class="text-primary font-bold hover:text-primary/80 transition-colors">Recetas</a>
-                <a href="#" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-bold shadow-md shadow-primary/20 w-full md:w-auto text-center block md:inline-block">Reservar</a>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main class="pb-20 max-w-7xl mx-auto">
-        <!-- Hero Title -->
-        <div class="px-6 py-8 md:py-12">
+        <section class="px-6 py-8 md:py-12">
             <h1 class="text-4xl md:text-5xl font-bold font-display text-background-dark dark:text-white mb-2">
                 Explora nuestras <span class="text-primary">Recetas</span>
             </h1>
             <p class="text-lg text-gray-600 dark:text-gray-400 font-light">Tradición y sabor en cada bocado.</p>
-        </div>
+        </section>
 
-        <!-- Horizontal Categories (Visual Only) -->
-        <div class="flex gap-3 overflow-x-auto px-6 pb-8 hide-scrollbar">
+        <nav class="flex gap-3 overflow-x-auto px-6 pb-8 hide-scrollbar">
             <button class="px-6 py-2.5 bg-primary text-white rounded-full font-medium whitespace-nowrap shadow-md shadow-primary/30 transition-transform active:scale-95">Todas</button>
             <button class="px-6 py-2.5 bg-white dark:bg-white/5 border border-primary/10 text-primary hover:bg-primary/5 rounded-full font-medium whitespace-nowrap transition-colors">Desayunos</button>
             <button class="px-6 py-2.5 bg-white dark:bg-white/5 border border-primary/10 text-primary hover:bg-primary/5 rounded-full font-medium whitespace-nowrap transition-colors">Almuerzos</button>
             <button class="px-6 py-2.5 bg-white dark:bg-white/5 border border-primary/10 text-primary hover:bg-primary/5 rounded-full font-medium whitespace-nowrap transition-colors">Postres</button>
             <button class="px-6 py-2.5 bg-white dark:bg-white/5 border border-primary/10 text-primary hover:bg-primary/5 rounded-full font-medium whitespace-nowrap transition-colors">Sopas</button>
-        </div>
+        </nav>
 
-        <!-- Recipe Grid -->
-        <div class="px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <section class="px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
-            <!-- Card 1 -->
-            <div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
+            <article class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
                 <div class="relative h-56 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRFum4D_Wjyzjqdvw-deU74VoOdekRKXN0QlU3wSzrYQNwhKBH_Vg3C9jQgXjCYW0OUtjDhRqUkLA0xPK4Nt_1reGP3Ezi9zEV9ohXhePVMo0gD75q5krJ7vvjQfGzAy3k6qa8I6LRaKfJiQfEVrcLHEygEG4zrrz1yuQstwYpS9KcJS5t_nrHay8uiO15Ao11TEMGOY27_dzcD3dNLEpyH02AehK8zbR7yx7jSIlAaEqK1E02_46gaPJiYwZSixujrfzhwK2ppw" alt="Churros Caseros Crujientes">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/646cfd9b9d80665af3be50be1d3b8c3d.png" alt="Churros Caseros Crujientes">
                     <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                         <i class="material-icons text-primary text-sm">star</i>
                         <span class="text-xs font-bold">5.0</span>
@@ -130,16 +90,15 @@
                         <span class="flex items-center gap-1 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded"><i class="material-icons text-[14px]">bar_chart</i> Difícil</span>
                     </div>
                     <h3 class="text-xl font-bold text-background-dark dark:text-white mb-4 leading-tight font-display">Churros Caseros Crujientes</h3>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    <a href="recetas/churros.html" class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
                         Ver Receta <i class="material-icons text-sm">arrow_forward</i>
-                    </button>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 2 -->
-            <div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
+            <article class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
                 <div class="relative h-56 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOh-hX9KaCS6ewqAux_Gc_u38m-Gw4fAeYxpZgJgcbs0gAlblI8MMQ-LjNBZ8UzUJzy-HjTCOBl15Dv9oqaz0fSZMx31PvfNQWc3NzeZo7le1I58MKlmr55nhp-S8M6bcAoNCNvAiK4Qt7aUkZoicINGJqmyhNjoeC8J8tzZKmCr-9saSA5QmFcYPXvNN-_lEBVQpngNq1T-8pQ-lcqYkPbuPKKgcAOnswmjvsLzKNql64ENURDzTNHgE1l9cfFoahbTBnsICdLA" alt="Flan Napolitano Cremoso">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/489c58f7db247402c366b32a303fc406.png" alt="Flan Napolitano Cremoso">
                     <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                         <i class="material-icons text-primary text-sm">star</i>
                         <span class="text-xs font-bold">4.8</span>
@@ -151,16 +110,15 @@
                         <span class="flex items-center gap-1 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded"><i class="material-icons text-[14px]">bar_chart</i> Fácil</span>
                     </div>
                     <h3 class="text-xl font-bold text-background-dark dark:text-white mb-4 leading-tight font-display">Flan Napolitano Cremoso</h3>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    <a href="recetas/flan.html" class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
                         Ver Receta <i class="material-icons text-sm">arrow_forward</i>
-                    </button>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 3 -->
-            <div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
+            <article class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
                 <div class="relative h-56 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCphSs5cKa6GzmPOSgaa9N_7JVsjkebtba0kVJLaLbiB1oQBUNHkhhiZES5HomKWjfuvinx7wWRKzDxCmAVGOta3SI7-A95YpCKm_76AvwZdwEBffU1UI-dUlSIght90ROdEBH4b3CvMlu1GYMo9AUJSr_yMLogA5QNPdPsBuWdU2CuiCk-rxtO-AHOBHtKPP4g_HJ4pRt03ZqmDjPCA5UpDQU6Yqhb9ZbfcStaGwQdPUmef4xgTFueBBVsC0MubEwOZgIf5Ge-Fg" alt="Tacos Al Pastor Tradicionales">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/7fa3b9847b9093e5f07d5343954a8ea5.png" alt="Tacos Al Pastor Tradicionales">
                     <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                         <i class="material-icons text-primary text-sm">star</i>
                         <span class="text-xs font-bold">4.9</span>
@@ -172,16 +130,15 @@
                         <span class="flex items-center gap-1 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded"><i class="material-icons text-[14px]">bar_chart</i> Media</span>
                     </div>
                     <h3 class="text-xl font-bold text-background-dark dark:text-white mb-4 leading-tight font-display">Tacos Al Pastor Tradicionales</h3>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    <a href="recetas/tacos.html" class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
                         Ver Receta <i class="material-icons text-sm">arrow_forward</i>
-                    </button>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 4 -->
-            <div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
+            <article class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
                 <div class="relative h-56 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJouaXabsYiAO9tbtAnY4lA1NzRwcLqSlWmXnlncA4h6V2CuzqbWG9NaPQjqWqEK1l6qO29MepJ_ur5EGY8deumqtrqfPqKEJPZEWs47oarBuhXIEasEcOSwUr_4UcoGwyV3pbB2lm8CssFnPRrcXykGyXKMmT5A4jd-pELoY2nWXKFLTcZFQl666B5VT1UfjRP0bAGGzj_FCu4U9yxaNWC7oZivF6X_Rd5UFw-HdYPODFfZlv1Iy33PCswv-Wh1SoCBhyn_SYAA" alt="Enchiladas Verdes Suizas">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/9204ae8f97be0b5e969a2f086d6d305c.png" alt="Enchiladas Verdes Suizas">
                     <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                         <i class="material-icons text-primary text-sm">star</i>
                         <span class="text-xs font-bold">4.7</span>
@@ -193,16 +150,15 @@
                         <span class="flex items-center gap-1 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded"><i class="material-icons text-[14px]">bar_chart</i> Fácil</span>
                     </div>
                     <h3 class="text-xl font-bold text-background-dark dark:text-white mb-4 leading-tight font-display">Enchiladas Verdes Suizas</h3>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    <a href="recetas/enchiladas.html" class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
                         Ver Receta <i class="material-icons text-sm">arrow_forward</i>
-                    </button>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 5 -->
-            <div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
+            <article class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
                 <div class="relative h-56 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbfZf2-tlOF_3KHkcifWbQf59sSr6jEiSuKuV0Arzbkv0Y_M_r1LQb0MgaYli0tAmriFzLSxgQ9nd5aD9hyZ1mkQNKbrvY0KyNWhsOga5_1A_NF7wthGrd7ZOTs5S8ErB0I6N6rQ_tgErySYBvhGDUohsdDbNuOA7DrMl4A9WRLf4pdkEunHSvD682OidVAPhfs5sVslTes1vci6Wp5_wbj1a67L8xfYaNi8BXQZugM5ZzyU2bQ5V0ZfhCxO42XdrH2HmeijiGaw" alt="Chilaquiles Rojos con Huevo">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/e22b4eb61ca575baa02a9d3ec24f8921.png" alt="Chilaquiles Rojos con Huevo">
                     <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                         <i class="material-icons text-primary text-sm">star</i>
                         <span class="text-xs font-bold">4.8</span>
@@ -214,16 +170,15 @@
                         <span class="flex items-center gap-1 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded"><i class="material-icons text-[14px]">bar_chart</i> Fácil</span>
                     </div>
                     <h3 class="text-xl font-bold text-background-dark dark:text-white mb-4 leading-tight font-display">Chilaquiles Rojos con Huevo</h3>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    <a href="recetas/chilaquiles.html" class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
                         Ver Receta <i class="material-icons text-sm">arrow_forward</i>
-                    </button>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 6 -->
-            <div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
+            <article class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
                 <div class="relative h-56 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk6zId8uAfUxmL46xDSRnfmN8djWnHrwByvEeaGKa6XS-FYFOHlWT9JtmTsKPG2HH0_DlKT7jVyQ2UN8mQMUQl8wUNJY9ZQQQ5UeaYRUg0pwA2VqeNSYBH976CEQyetKnF07Ous0Fkg-i83ot2QP5l3vU55OPgh81Kl21BcBTS53tY9XGC44965v8fiSkMjchAJyZrVIi5cE1C5C2-pmXc_uXw_3gHETc-6H4KxkaTM0ju87ly8yJsLhm2u1z1HPHm0JtuE_cHbg" alt="Pozole Rojo Guerrero">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/66d2ae0c7ea510b7256b6962348740e4.png" alt="Pozole Rojo Guerrero">
                     <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                         <i class="material-icons text-primary text-sm">star</i>
                         <span class="text-xs font-bold">4.9</span>
@@ -235,16 +190,15 @@
                         <span class="flex items-center gap-1 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded"><i class="material-icons text-[14px]">bar_chart</i> Media</span>
                     </div>
                     <h3 class="text-xl font-bold text-background-dark dark:text-white mb-4 leading-tight font-display">Pozole Rojo Guerrero</h3>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    <a href="recetas/pozole.html" class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
                         Ver Receta <i class="material-icons text-sm">arrow_forward</i>
-                    </button>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 7 -->
-            <div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
+            <article class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
                 <div class="relative h-56 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5M3pUBx0O-Ih8FZiflue--IrVrTHoL8b3NijEBWxNkL3XYPvOpY5qTuWz-96Mxa10siyLGLyO8kP54kVIl48c1FEieH0A7wOWYi-NFflsrbDnEbcYS4ekg0ELrHEHQhp5Dvne08m3ryXI_QEts6tmT0S2BW3gzM3CjE9pJppkTBNl8kKny9UtEfeuQYKDSxmAQZjlkcEVbp0YsKTrTp5FwUg4Rxc3F1DIduop1f_HjgkwBSgGBQ8ssIo_l2qSa0YWVT6p0D8wMg" alt="Mole Poblano Auténtico">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/9d5b48269c43352a655416c5d0f2e494.png" alt="Mole Poblano Auténtico">
                     <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                         <i class="material-icons text-primary text-sm">star</i>
                         <span class="text-xs font-bold">4.6</span>
@@ -256,16 +210,15 @@
                         <span class="flex items-center gap-1 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded"><i class="material-icons text-[14px]">bar_chart</i> Difícil</span>
                     </div>
                     <h3 class="text-xl font-bold text-background-dark dark:text-white mb-4 leading-tight font-display">Mole Poblano Auténtico</h3>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    <a href="recetas/mole.html" class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
                         Ver Receta <i class="material-icons text-sm">arrow_forward</i>
-                    </button>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 8 -->
-            <div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
+            <article class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-primary/5 group">
                 <div class="relative h-56 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1h0S_H1nPPaQapxbo05HFZxgdpURNHi4O91J1vOmagS8RtVjLoOj7bydWZcepSOK_RMG89TelRsE2-Ubi5YY-tXkkEDyrAR8aElTkPlVnyYfQNOiascxhv6mMLNwMfy38B3wkj7JnoLR9JABhMqhb3R3qJt-5eOYdfbcwQgu-9F11riA0wBbIyxrCD_sveELtMen5-W3CxTWHUmBTgOLxUzQRcT_LSzGL_2XslzHloXEDHmNImap8ETS8EmuSOl9NBFvMyrpH5Q" alt="Sopa de Tortilla Crujiente">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/d81fae14a9397c17d11f3213fda78b32.png" alt="Sopa de Tortilla Crujiente">
                     <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                         <i class="material-icons text-primary text-sm">star</i>
                         <span class="text-xs font-bold">4.7</span>
@@ -277,15 +230,14 @@
                         <span class="flex items-center gap-1 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded"><i class="material-icons text-[14px]">bar_chart</i> Fácil</span>
                     </div>
                     <h3 class="text-xl font-bold text-background-dark dark:text-white mb-4 leading-tight font-display">Sopa de Tortilla Crujiente</h3>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    <a href="recetas/sopa.html" class="w-full py-3 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/20">
                         Ver Receta <i class="material-icons text-sm">arrow_forward</i>
-                    </button>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-        </div>
+        </section>
 
-        <!-- Load More -->
         <div class="mt-12 mb-6 px-6 flex justify-center">
             <button class="w-full md:w-auto md:px-12 py-4 border-2 border-primary text-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all">
                 Cargar más recetas
@@ -294,7 +246,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-100 dark:bg-background-dark/50 py-10 px-6 text-center border-t border-gray-200 dark:border-primary/5 pb-24 md:pb-10">
         <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
             <i class="material-icons">restaurant</i>
@@ -307,13 +258,12 @@
         </div>
     </footer>
 
-    <!-- Bottom Navigation (Mobile Only) -->
     <nav class="fixed bottom-0 w-full bg-white/95 dark:bg-background-dark/95 backdrop-blur-xl border-t border-gray-100 dark:border-primary/10 px-8 py-3 flex justify-between items-center z-50 md:hidden">
         <a href="index.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary dark:text-gray-500 transition-colors">
             <i class="material-icons">home</i>
             <span class="text-[10px] font-medium uppercase tracking-wider">Inicio</span>
         </a>
-        <a href="recipes.html" class="flex flex-col items-center gap-1 text-primary">
+        <a href="menu.html" class="flex flex-col items-center gap-1 text-primary">
             <i class="material-icons">restaurant_menu</i>
             <span class="text-[10px] font-medium uppercase tracking-wider">Recetas</span>
         </a>

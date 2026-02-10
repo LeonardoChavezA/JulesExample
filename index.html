@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabores de Casa - Letonia en tu mesa</title>
+    <title>Sabores de Casa - México en tu mesa</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 
     <script>
         tailwind.config = {
@@ -28,79 +29,53 @@
             },
         }
     </script>
-    <style>
-        .wood-texture {
-            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCKAFhiMYrE2Kl7aG4dztnJreKDMbEHgHlyIkux95LFETu7yXIYV-of1r7FqSKZFK_AmnKh1ZeGh3RNL9LUSiL8weL7S3cwWjXN5CJ4Dm_T6Y74PJ0KVJf6IjGNNvIGkpPRER_ojOKX_0TbzGXrGKDhWPIxYGTmr4h7nf73gGOj_ha74dhFrpATSbXiv5nD0F5n5d7I8r12wFe8OXA5jaS23NZRbTn-83V2yYipDMCK-46VphfKBXKoEYI2EiZiCnYLEHQXCrh6qg);
-            background-blend-mode: overlay;
-            background-size: cover;
-        }
-        .glass-morphism {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        /* Mobile Menu Checkbox Hack */
-        #mobile-menu-toggle:checked ~ #mobile-menu {
-            display: block;
-        }
-        #mobile-menu {
-            display: none;
-        }
-        @media (min-width: 768px) {
-            #mobile-menu {
-                display: flex !important;
-            }
-        }
-    </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-sans text-background-dark dark:text-background-light selection:bg-primary/30">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-morphism border-b border-primary/10">
-        <div class="px-6 py-4 flex justify-between items-center relative">
-            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <span class="text-primary text-2xl"><i class="material-icons">restaurant</i></span>
-                <span class="font-bold text-xl tracking-tight text-primary font-display">Sabores de Casa</span>
-            </a>
+    <header>
+        <nav class="fixed top-0 w-full z-50 glass-morphism border-b border-primary/10">
+            <div class="px-6 py-4 flex justify-between items-center relative">
+                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="text-primary text-2xl"><i class="material-icons">restaurant</i></span>
+                    <span class="font-bold text-xl tracking-tight text-primary font-display">Sabores de Casa</span>
+                </a>
 
-            <!-- Checkbox Hack Trigger -->
-            <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
+                <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
 
-            <label for="mobile-menu-toggle" class="md:hidden text-primary cursor-pointer p-2 hover:bg-primary/10 rounded transition-colors">
-                <i class="material-icons text-3xl">menu</i>
-            </label>
+                <label for="mobile-menu-toggle" class="md:hidden text-primary cursor-pointer p-2 hover:bg-primary/10 rounded transition-colors">
+                    <i class="material-icons text-3xl">menu</i>
+                </label>
 
-            <!-- Menu Items -->
-            <div id="mobile-menu" class="absolute md:static top-full left-0 w-full md:w-auto bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-none border-primary/10 p-6 md:p-0 flex-col md:flex-row gap-6 md:gap-8 items-center font-medium shadow-lg md:shadow-none">
-                <a href="index.html" class="text-primary font-bold hover:text-primary/80 transition-colors">Inicio</a>
-                <a href="recipes.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Recetas</a>
-                <a href="#" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-bold shadow-md shadow-primary/20 w-full md:w-auto text-center block md:inline-block">Reservar</a>
+                <div id="mobile-menu" class="absolute md:static top-full left-0 w-full md:w-auto bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-none border-primary/10 p-6 md:p-0 flex-col md:flex-row gap-6 md:gap-8 items-center font-medium shadow-lg md:shadow-none">
+                    <a href="index.html" class="text-primary font-bold hover:text-primary/80 transition-colors">Inicio</a>
+                    <a href="menu.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Menú</a>
+                    <a href="recetas/churros.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Churros</a>
+                    <a href="recetas/flan.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Flan</a>
+                    <a href="recetas/tacos.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Tacos</a>
+                    <a href="#" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-bold shadow-md shadow-primary/20 w-full md:w-auto text-center block md:inline-block">Reservar</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Main Content -->
     <main class="pt-16 wood-texture bg-white/90 dark:bg-black/80 min-h-screen">
 
-        <!-- Hero Section -->
         <section class="relative h-[85vh] flex flex-col justify-end overflow-hidden group">
-            <img alt="Sabores de Letonia" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[20s] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9HkzYzV0JO8ypVuKlqDZphIA3GOSZLlgWpejv-lN1ziuyetOi-G9fsqldNhjnLouMid4Rd0Rrfady6L6n4FZo7t8eQ-xS0yoZhsfvPkXqDqvVaS_j2B5F2Se0oAdzNvp7teqSaWWZUfLLH3nOSRaRLfm9DRn9HdDgIH1OSqswP_5OvAhPhzEyYkv6APp-3wNXWKcEvwj9KvDczMtUdUweJJNjHiVecXUxl9Z_-xEVvqIJ4r3VsFpngdrqUubHFGTBR3ttvJNZQA">
+            <img alt="Sabores de México" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[20s] group-hover:scale-105" src="img/66d2ae0c7ea510b7256b6962348740e4.png">
             <div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent"></div>
             <div class="relative z-10 p-6 space-y-4 mb-16 md:mb-24 max-w-4xl mx-auto w-full">
                 <div class="glass-morphism rounded-xl px-4 py-2 inline-block backdrop-blur-md border-white/20">
-                    <span class="text-white text-xs md:text-sm font-semibold tracking-[0.2em] uppercase">Tradición Báltica</span>
+                    <span class="text-white text-xs md:text-sm font-semibold tracking-[0.2em] uppercase">Tradición Mexicana</span>
                 </div>
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] font-display drop-shadow-lg">
-                    El corazón de Letonia<br>en tu mesa.
+                    El corazón de México<br>en tu mesa.
                 </h1>
                 <p class="text-lg md:text-xl text-white/90 max-w-md drop-shadow-md font-light leading-relaxed">
-                    Descubre los sabores ancestrales y la calidez del hogar letón en cada plato preparado con amor.
+                    Descubre los sabores ancestrales y la calidez del hogar mexicano en cada plato preparado con amor.
                 </p>
             </div>
         </section>
 
-        <!-- Inauguration Banner -->
         <section class="px-6 -mt-16 relative z-20 max-w-4xl mx-auto">
             <div class="glass-morphism bg-white/60 dark:bg-black/40 rounded-2xl p-6 md:p-8 shadow-2xl border-white/40 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 backdrop-blur-xl">
                 <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
@@ -125,13 +100,12 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
         <section class="px-6 py-20 md:py-32 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-8">
                 <div class="w-16 h-1.5 bg-primary rounded-full"></div>
                 <h3 class="text-4xl md:text-5xl font-bold leading-tight font-display text-background-dark dark:text-white">Nuestra Historia</h3>
                 <p class="text-lg leading-relaxed text-background-dark/80 dark:text-background-light/80 font-light">
-                    Traemos las recetas de nuestras abuelas desde las costas del Báltico hasta tu paladar. Ingredientes ahumados, granos ancestrales y el alma de Riga en cada bocado. Una experiencia culinaria que trasciende fronteras y conecta culturas a través del sabor.
+                    Traemos las recetas de nuestras abuelas desde el corazón de México hasta tu paladar. Ingredientes frescos, chiles ancestrales y el alma de nuestra tierra en cada bocado. Una experiencia culinaria que trasciende fronteras y conecta culturas a través del sabor.
                 </p>
                 <a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all uppercase tracking-widest text-sm border-b-2 border-primary/20 hover:border-primary pb-1">
                     Conoce más sobre nosotros <i class="material-icons text-sm">arrow_forward</i>
@@ -140,14 +114,12 @@
 
             <div class="grid grid-cols-2 gap-4 md:gap-6 pt-4 relative">
                 <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl"></div>
-                <img class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-1 object-cover h-64 w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApUCI9RZayhaI6VCq9g9vAd4S0okPA4fPKHxiSQ3Z11aD7AEBSKPvRrJ9k6rqGzJ8Zkszf6z8-Fi3Yg8yfzgn8xwyidbj4HwLEztp9_VzfBwF4GmSbY8jmOsb-m8QmB5JkJsY4wlRhHZj_5fTgK9_776Xw9kx-GxXY_z8puTrVJRuVNR_lvaBd_X02i48_vFPuN1CFQ8GjK4azg1Ai7FDlXqapdWfMYkaLjZdC5t0e4BAnndodc3fjM2Qwcw3pLUqqkcF83F1XQA" alt="Traditional kitchen">
-                <img class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-1 mt-12 object-cover h-64 w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMtXPuKCE1_7AYYqW--g1AZOQeYslnDBCyahKR5savs_fswmuxkIxmggM8axE_z8SC-vThuxmjLEt6PaHs3e5AwhtzpltasktjlTTbBmpgWi17kgMhkKoOH6w18HyG2B2MDwr_zZILKH9fHbhXjyAcb3QCWDkKM7dPBK577TjyCnBA6hrPHM1bJscDpNwgE-G31xajz7jx_4XGAMjHS7YrRlEMRH_vTK20fcgLf8U885wpvNJbvt9GiuL8dUFbbdKaZVtPVLFrA" alt="Fresh ingredients">
+                <img class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-1 object-cover h-64 w-full" src="img/04009a0e247fbc4a56da9bb24031024f.png" alt="Traditional kitchen">
+                <img class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-1 mt-12 object-cover h-64 w-full" src="img/c7ee39c6a9b283d16e9e07afda075229.png" alt="Fresh ingredients">
             </div>
         </section>
 
-        <!-- Top Recipes Section -->
         <section class="bg-primary/5 py-20 px-6 relative overflow-hidden">
-            <!-- Decorative elements -->
             <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
             <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
 
@@ -157,68 +129,67 @@
                         <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Menú Degustación</span>
                         <h3 class="text-4xl font-bold font-display text-background-dark dark:text-white">Recetas Estrella</h3>
                     </div>
-                    <a href="recipes.html" class="bg-white dark:bg-background-dark px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all text-primary font-bold text-sm flex items-center gap-2 group border border-primary/10">
+                    <a href="menu.html" class="bg-white dark:bg-background-dark px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all text-primary font-bold text-sm flex items-center gap-2 group border border-primary/10">
                         Ver menú completo
                         <i class="material-icons align-middle text-sm group-hover:translate-x-1 transition-transform">arrow_forward</i>
                     </a>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Recipe Card 1 -->
-                    <div class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
+                    <!-- Churros -->
+                    <article class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
                         <div class="h-64 relative overflow-hidden">
-                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAis7dWmEsDxDVSrIyMy12GIHUXqeaolZ1DOM4UrfwBLjIVJHpbEWZhhDUC3uV4xPKs3UsLBgKKxNQbgWBrc0MFUXUJgBV4h2iBhZOpJm8MI07bB_gkTUzt_a2qjDNvr7yXlhK1dSqX6cv4fLIrVdQnaL-H0-LPzmYHBiAsuSXJHxqa169tq_yLNtAh35bH0y9uoVs-FVPhVfGg4VPFqQJNUjOgrXDm2h2T85akWc2VbtFP8Iasz3pAz008LG5R4hSmfnSBYNw2Yg" alt="Speķa pīrāgi">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/646cfd9b9d80665af3be50be1d3b8c3d.png" alt="Churros Caseros Crujientes">
                             <div class="absolute top-4 left-4 glass-morphism px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm flex items-center gap-1 backdrop-blur-md bg-white/80">
                                 <i class="material-icons text-[14px]">favorite</i> Favorito
                             </div>
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-2">
-                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Speķa pīrāgi</h4>
-                                <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">45 min</span>
+                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Churros Caseros</h4>
+                                <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">40 min</span>
                             </div>
-                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Delicados bollos de masa fermentada rellenos de panceta ahumada y cebolla caramelizada.</p>
-                            <a href="#" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
+                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Crujientes por fuera, suaves por dentro y bañados en azúcar y canela.</p>
+                            <a href="recetas/churros.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Recipe Card 2 -->
-                    <div class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
+                    <!-- Flan -->
+                    <article class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
                         <div class="h-64 relative overflow-hidden">
-                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvotW62Dd5xcxjWwm-2UrvqxA77BHAlmDJW3ASNxzLXNRIXpE-cN95vnqO0BR1pHPfti4n1lU11bdfeeVO98B8hsBb17zcbOydZz5NXT9mC27w-Ug4Hn6HI0-pe7DJbHmwjq8PLWNvFCC8IIAQNiHWadYjxmTMaWfOvvXCQQ95cGAxO9hRAtOu0kfeIo6W8ctorT1Bk4Ggb0rI0MNxFgQBG2hbIZJYYVoKtUcU21uT6on2JUlEJER-GgKTa5YOlZHht90rLq4LFQ" alt="Zirņi ar speķi">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/489c58f7db247402c366b32a303fc406.png" alt="Flan Napolitano">
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-2">
-                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Zirņi ar speķi</h4>
+                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Flan Napolitano</h4>
                                 <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">60 min</span>
                             </div>
-                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">El plato nacional: guisantes grises cocidos a fuego lento con tocino crujiente y kefir fresco.</p>
-                            <a href="#" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
+                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Un clásico irresistible. Suave, cremoso y con un caramelo líquido.</p>
+                            <a href="recetas/flan.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Recipe Card 3 -->
-                    <div class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
+                    <!-- Tacos -->
+                    <article class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
                         <div class="h-64 relative overflow-hidden">
-                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUNEcdf4QuZL-ywiuXqc7fimoX5iGafRphtHScWj9xGrim40ZiXXihZt1JbmoV8fXhHOHx7a-MgZjRrw3dbkCoy7v5tYjAjRv90SDGSSmCZ4gkom72FbA3LR8Dv8lunyBEu6czP-QR7iBUovIjLV8PJ-dUgEGpDXkZTsIETA6xIeH9gejBSMcxTY57uc3dQpiQE9gGjxhf9jU8AuTsLTfjdQZ_3Bg_41ZS6V2OryWCYSk4ePy_vMerTvagxq1VMkdRYDSvBqeJvQ" alt="Rupjmaizes kārtojums">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/7fa3b9847b9093e5f07d5343954a8ea5.png" alt="Tacos Al Pastor">
                             <div class="absolute top-4 left-4 glass-morphism px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm flex items-center gap-1 backdrop-blur-md bg-white/80">
                                 <i class="material-icons text-[14px]">star</i> Popular
                             </div>
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-2">
-                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Rupjmaizes kārtojums</h4>
+                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Tacos Al Pastor</h4>
                                 <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">30 min</span>
                             </div>
-                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Postre tradicional de capas de pan de centeno tostado, nata montada y mermelada de arándanos.</p>
-                            <a href="#" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
+                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Carne de cerdo marinada en achiote, servida con piña y cilantro.</p>
+                            <a href="recetas/tacos.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Location & Contact -->
         <section class="px-6 py-20 space-y-8 max-w-4xl mx-auto">
             <div class="text-center space-y-4 mb-12">
                 <h3 class="text-4xl font-bold font-display text-background-dark dark:text-white">¿Dónde encontrarnos?</h3>
@@ -226,7 +197,7 @@
             </div>
 
             <div class="rounded-2xl overflow-hidden shadow-2xl h-80 relative border-4 border-white dark:border-background-dark/50 group">
-                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUpwaDBs9w9kt3KQSovW7eD8Fc5frovDtK3VxeZwZWPEq3KEU47GTlGUCikrVhN3dCVvmw7uCtWQjCu5V_yiI4haHmzey6uVpROtmvllaE87863jJPgAXQ84j6wm44SDFFznviR-9rmmbdIMZWAWHmj_NbpOrAyeGyaes3Jha4DBuJZtDdZDe1Iu8EytFccQ5GT42a8q_WyAQXKxGWcao1H9LAhQaWuytgzHKrXGLu3VnZiefaXrxD7ZklmW1a4cz5wmZEmrXXWw" alt="Riga Map">
+                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="img/d442fc8dd856993e84580f4b291d5862.png" alt="Mapa de Ciudad de México">
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div class="bg-primary text-white p-4 rounded-full shadow-lg animate-bounce">
                         <i class="material-icons text-3xl">location_on</i>
@@ -257,10 +228,8 @@
             </div>
         </section>
 
-        <!-- Newsletter -->
         <section class="mx-6 mb-20">
             <div class="bg-background-dark dark:bg-black text-background-light p-10 md:p-16 rounded-[2.5rem] relative overflow-hidden max-w-6xl mx-auto shadow-2xl">
-                <!-- Abstract pattern -->
                 <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
                     <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="100" cy="0" r="50" fill="currentColor"/></svg>
                 </div>
@@ -279,7 +248,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="bg-primary/5 border-t border-primary/10 pt-16 pb-24 px-6">
             <div class="max-w-6xl mx-auto flex flex-col items-center text-center space-y-8">
                 <div class="flex flex-col items-center gap-4">
@@ -288,7 +256,7 @@
                         <span class="font-bold text-2xl tracking-tight text-primary font-display">Sabores de Casa</span>
                     </div>
                     <p class="text-sm text-background-dark/60 dark:text-background-light/60 max-w-md leading-relaxed">
-                        Auténtica gastronomía letona, servida con amor y tradición desde 2024. Un homenaje a nuestras raíces y al buen comer.
+                        Auténtica gastronomía mexicana, servida con amor y tradición desde 2024. Un homenaje a nuestras raíces y al buen comer.
                     </p>
                 </div>
 
@@ -310,7 +278,6 @@
             </div>
         </footer>
 
-        <!-- Fixed Bottom CTA (Reservation) -->
         <div class="fixed bottom-6 left-6 right-6 z-40 md:hidden">
             <button class="w-full bg-primary text-white font-bold py-4 rounded-2xl shadow-2xl shadow-primary/40 flex items-center justify-center gap-3 active:scale-95 transition-transform backdrop-blur-md">
                 <i class="material-icons">event_seat</i>
