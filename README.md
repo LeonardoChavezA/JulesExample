@@ -1,72 +1,16 @@
-# [Project Name]
+# React + Vite
 
-## Description
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-[Provide a short description of the project here. Explain what the project does, its purpose, and the problem it solves.]
+Currently, two official plugins are available:
 
-## Table of Contents
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+## React Compiler
 
-## Features
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+## Expanding the ESLint configuration
 
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-- [Requirement 1]
-- [Requirement 2]
-
-## Installation
-
-To install [Project Name], follow these steps:
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/yourproject.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd yourproject
-    ```
-3. Install dependencies:
-    ```bash
-    [Command to install dependencies]
-    ```
-
-## Usage
-
-To use [Project Name], follow these steps:
-
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-
-## Contributing
-
-To contribute to [Project Name], follow these steps:
-
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin <project_name>/<location>`
-5. Create the pull request.
-
-Alternatively, see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-
-## License
-
-This project is licensed under the [License Name] License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-If you want to contact me you can reach me at [Your Email].
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
