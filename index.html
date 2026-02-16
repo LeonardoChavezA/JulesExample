@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabores de Casa - México en tu mesa</title>
+    <title>Sabores de Letonia - Corazón Báltico</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -15,12 +15,12 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#ea2a33",
+                        "primary": "#9E3039",
                         "background-light": "#f8f7f6",
                         "background-dark": "#221810",
                     },
                     fontFamily: {
-                        "sans": ["Plus Jakarta Sans", "sans-serif"],
+                        "sans": ["Lato", "sans-serif"],
                         "serif": ["Noto Serif", "serif"],
                         "display": ["Noto Serif", "serif"]
                     },
@@ -32,80 +32,57 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark font-sans text-background-dark dark:text-background-light selection:bg-primary/30">
 
-    <header>
-        <nav class="fixed top-0 w-full z-50 glass-morphism border-b border-primary/10">
-            <div class="px-6 py-4 flex justify-between items-center relative">
-                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <span class="text-primary text-2xl"><i class="material-icons">restaurant</i></span>
-                    <span class="font-bold text-xl tracking-tight text-primary font-display">Sabores de Casa</span>
-                </a>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-morphism border-b border-primary/10">
+        <div class="px-6 py-4 flex justify-between items-center relative">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="text-primary text-2xl"><i class="material-icons">restaurant</i></span>
+                <span class="font-bold text-xl tracking-tight text-primary font-display">Sabores de Letonia</span>
+            </a>
 
-                <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
+            <button id="mobile-menu-btn" class="md:hidden text-primary p-2 hover:bg-primary/10 rounded transition-colors focus:outline-none">
+                <i class="material-icons text-3xl">menu</i>
+            </button>
 
-                <label for="mobile-menu-toggle" class="md:hidden text-primary cursor-pointer p-2 hover:bg-primary/10 rounded transition-colors">
-                    <i class="material-icons text-3xl">menu</i>
-                </label>
-
-                <div id="mobile-menu" class="absolute md:static top-full left-0 w-full md:w-auto bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-none border-primary/10 p-6 md:p-0 flex-col md:flex-row gap-6 md:gap-8 items-center font-medium shadow-lg md:shadow-none">
-                    <a href="index.html" class="text-primary font-bold hover:text-primary/80 transition-colors">Inicio</a>
-                    <a href="menu.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Menú</a>
-                    <a href="recetas/churros.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Churros</a>
-                    <a href="recetas/flan.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Flan</a>
-                    <a href="recetas/tacos.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Tacos</a>
-                    <a href="#" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-bold shadow-md shadow-primary/20 w-full md:w-auto text-center block md:inline-block">Reservar</a>
-                </div>
+            <!-- Menu Items -->
+            <div id="mobile-menu" class="absolute md:static top-full left-0 w-full md:w-auto bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-none border-primary/10 p-6 md:p-0 flex-col md:flex-row gap-6 md:gap-8 items-center font-medium shadow-lg md:shadow-none hidden md:flex">
+                <a href="index.html" class="text-primary font-bold hover:text-primary/80 transition-colors">Inicio</a>
+                <a href="menu.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Menú</a>
+                <a href="recetas/piragi.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Pīrāgi</a>
+                <a href="recetas/zirni.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Zirņi</a>
+                <a href="recetas/maize.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Maize</a>
+                <a href="#" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-bold shadow-md shadow-primary/20 w-full md:w-auto text-center block md:inline-block">Reservar</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
+    <!-- Main Content -->
     <main class="pt-16 wood-texture bg-white/90 dark:bg-black/80 min-h-screen">
 
+        <!-- Hero Section -->
         <section class="relative h-[85vh] flex flex-col justify-end overflow-hidden group">
-            <img alt="Sabores de México" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[20s] group-hover:scale-105" src="img/66d2ae0c7ea510b7256b6962348740e4.png">
+            <img alt="Sabores de Letonia" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[20s] group-hover:scale-105" src="img/857450b0f3b8c9c763fb3e591e9f2be0.png">
             <div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent"></div>
             <div class="relative z-10 p-6 space-y-4 mb-16 md:mb-24 max-w-4xl mx-auto w-full">
                 <div class="glass-morphism rounded-xl px-4 py-2 inline-block backdrop-blur-md border-white/20">
-                    <span class="text-white text-xs md:text-sm font-semibold tracking-[0.2em] uppercase">Tradición Mexicana</span>
+                    <span class="text-white text-xs md:text-sm font-semibold tracking-[0.2em] uppercase">Tradición Báltica</span>
                 </div>
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] font-display drop-shadow-lg">
-                    El corazón de México<br>en tu mesa.
+                    El corazón de Letonia<br>en tu mesa.
                 </h1>
                 <p class="text-lg md:text-xl text-white/90 max-w-md drop-shadow-md font-light leading-relaxed">
-                    Descubre los sabores ancestrales y la calidez del hogar mexicano en cada plato preparado con amor.
+                    Descubre los sabores ancestrales y la calidez del hogar letón en cada plato preparado con amor y respeto por la tradición.
                 </p>
             </div>
         </section>
 
-        <section class="px-6 -mt-16 relative z-20 max-w-4xl mx-auto">
-            <div class="glass-morphism bg-white/60 dark:bg-black/40 rounded-2xl p-6 md:p-8 shadow-2xl border-white/40 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 backdrop-blur-xl">
-                <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
-                    <div class="bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg shadow-primary/30 inline-flex items-center gap-1">
-                        <i class="material-icons text-[14px]">celebration</i> Inauguración
-                    </div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-background-dark dark:text-white font-display">Próxima apertura</h2>
-                    <p class="text-sm text-background-dark/70 dark:text-white/70 italic max-w-xs">Un San Valentín inolvidable te espera con nosotros.</p>
-                </div>
-
-                <div class="flex gap-6 text-primary font-bold text-4xl md:text-5xl font-display items-center bg-white/50 dark:bg-black/20 p-4 rounded-xl border border-white/20">
-                    <div class="flex flex-col items-center">
-                        <span class="leading-none drop-shadow-sm">14</span>
-                        <span class="text-[10px] uppercase text-background-dark/60 dark:text-white/60 font-sans tracking-widest mt-1">Febrero</span>
-                    </div>
-                    <span class="text-background-dark/20 dark:text-white/20 text-3xl">|</span>
-                    <div class="flex flex-col items-center">
-                        <span class="leading-none drop-shadow-sm">20</span>
-                        <span class="text-[10px] uppercase text-background-dark/60 dark:text-white/60 font-sans tracking-widest mt-1">24</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- About Us Section -->
         <section class="px-6 py-20 md:py-32 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-8">
                 <div class="w-16 h-1.5 bg-primary rounded-full"></div>
                 <h3 class="text-4xl md:text-5xl font-bold leading-tight font-display text-background-dark dark:text-white">Nuestra Historia</h3>
                 <p class="text-lg leading-relaxed text-background-dark/80 dark:text-background-light/80 font-light">
-                    Traemos las recetas de nuestras abuelas desde el corazón de México hasta tu paladar. Ingredientes frescos, chiles ancestrales y el alma de nuestra tierra en cada bocado. Una experiencia culinaria que trasciende fronteras y conecta culturas a través del sabor.
+                    Traemos las recetas de nuestras abuelas desde los bosques de Letonia hasta tu paladar. Ingredientes ahumados, granos ancestrales, lácteos frescos y el alma de Riga en cada bocado. Una experiencia culinaria que conecta con la naturaleza.
                 </p>
                 <a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all uppercase tracking-widest text-sm border-b-2 border-primary/20 hover:border-primary pb-1">
                     Conoce más sobre nosotros <i class="material-icons text-sm">arrow_forward</i>
@@ -114,20 +91,18 @@
 
             <div class="grid grid-cols-2 gap-4 md:gap-6 pt-4 relative">
                 <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl"></div>
-                <img class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-1 object-cover h-64 w-full" src="img/04009a0e247fbc4a56da9bb24031024f.png" alt="Traditional kitchen">
-                <img class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-1 mt-12 object-cover h-64 w-full" src="img/c7ee39c6a9b283d16e9e07afda075229.png" alt="Fresh ingredients">
+                <img class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-1 object-cover h-64 w-full" src="img/04009a0e247fbc4a56da9bb24031024f.png" alt="Traditional Latvian kitchen">
+                <img class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 hover:-translate-y-1 mt-12 object-cover h-64 w-full" src="img/c7ee39c6a9b283d16e9e07afda075229.png" alt="Fresh Latvian ingredients">
             </div>
         </section>
 
+        <!-- Top Recipes Section -->
         <section class="bg-primary/5 py-20 px-6 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
-
             <div class="max-w-6xl mx-auto relative z-10">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div>
                         <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Menú Degustación</span>
-                        <h3 class="text-4xl font-bold font-display text-background-dark dark:text-white">Recetas Estrella</h3>
+                        <h3 class="text-4xl font-bold font-display text-background-dark dark:text-white">Clásicos Letones</h3>
                     </div>
                     <a href="menu.html" class="bg-white dark:bg-background-dark px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all text-primary font-bold text-sm flex items-center gap-2 group border border-primary/10">
                         Ver menú completo
@@ -136,68 +111,69 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Churros -->
+                    <!-- Recipe 1 -->
                     <article class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
                         <div class="h-64 relative overflow-hidden">
-                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/646cfd9b9d80665af3be50be1d3b8c3d.png" alt="Churros Caseros Crujientes">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/e26689e1672b427103c9ae1cdd731154.png" alt="Speķa pīrāgi">
                             <div class="absolute top-4 left-4 glass-morphism px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm flex items-center gap-1 backdrop-blur-md bg-white/80">
                                 <i class="material-icons text-[14px]">favorite</i> Favorito
                             </div>
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-2">
-                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Churros Caseros</h4>
-                                <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">40 min</span>
+                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Speķa pīrāgi</h4>
+                                <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">45 min</span>
                             </div>
-                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Crujientes por fuera, suaves por dentro y bañados en azúcar y canela.</p>
-                            <a href="recetas/churros.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
+                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Bollos de masa fermentada rellenos de panceta ahumada y cebolla.</p>
+                            <a href="recetas/piragi.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
                         </div>
                     </article>
 
-                    <!-- Flan -->
+                    <!-- Recipe 2 -->
                     <article class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
                         <div class="h-64 relative overflow-hidden">
-                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/489c58f7db247402c366b32a303fc406.png" alt="Flan Napolitano">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/765809ab7965b007bc95e3f81ba7e306.png" alt="Pelēkie zirņi">
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-2">
-                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Flan Napolitano</h4>
+                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Pelēkie zirņi</h4>
                                 <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">60 min</span>
                             </div>
-                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Un clásico irresistible. Suave, cremoso y con un caramelo líquido.</p>
-                            <a href="recetas/flan.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
+                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Guisantes grises con tocino y cebolla, el plato nacional por excelencia.</p>
+                            <a href="recetas/zirni.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
                         </div>
                     </article>
 
-                    <!-- Tacos -->
+                    <!-- Recipe 3 -->
                     <article class="group bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-primary/10 transition-all duration-300 hover:-translate-y-2">
                         <div class="h-64 relative overflow-hidden">
-                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/7fa3b9847b9093e5f07d5343954a8ea5.png" alt="Tacos Al Pastor">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="img/2da8794971fc7a9bf43de4abb771af3d.png" alt="Rupjmaizes kārtojums">
                             <div class="absolute top-4 left-4 glass-morphism px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm flex items-center gap-1 backdrop-blur-md bg-white/80">
                                 <i class="material-icons text-[14px]">star</i> Popular
                             </div>
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-2">
-                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Tacos Al Pastor</h4>
+                                <h4 class="text-xl font-bold font-display text-background-dark dark:text-white">Rupjmaizes kārtojums</h4>
                                 <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold">30 min</span>
                             </div>
-                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Carne de cerdo marinada en achiote, servida con piña y cilantro.</p>
-                            <a href="recetas/tacos.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
+                            <p class="text-sm text-background-dark/60 dark:text-background-light/60 leading-relaxed mb-6">Postre en capas de pan de centeno, nata montada y mermelada.</p>
+                            <a href="recetas/maize.html" class="text-primary font-bold text-sm hover:underline">Ver detalles</a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- Location & Contact -->
         <section class="px-6 py-20 space-y-8 max-w-4xl mx-auto">
             <div class="text-center space-y-4 mb-12">
                 <h3 class="text-4xl font-bold font-display text-background-dark dark:text-white">¿Dónde encontrarnos?</h3>
-                <p class="text-background-dark/60 dark:text-background-light/60 max-w-lg mx-auto">Te esperamos en el corazón de la ciudad para compartir momentos inolvidables.</p>
+                <p class="text-background-dark/60 dark:text-background-light/60 max-w-lg mx-auto">Te esperamos en el centro histórico de Riga.</p>
             </div>
 
             <div class="rounded-2xl overflow-hidden shadow-2xl h-80 relative border-4 border-white dark:border-background-dark/50 group">
-                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="img/d442fc8dd856993e84580f4b291d5862.png" alt="Mapa de Ciudad de México">
+                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="img/d442fc8dd856993e84580f4b291d5862.png" alt="Mapa de Riga">
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div class="bg-primary text-white p-4 rounded-full shadow-lg animate-bounce">
                         <i class="material-icons text-3xl">location_on</i>
@@ -212,7 +188,7 @@
                     </div>
                     <div>
                         <p class="text-xs uppercase text-background-dark/40 dark:text-white/40 font-bold tracking-widest mb-1">Llámanos</p>
-                        <p class="font-bold text-lg text-background-dark dark:text-white">+34 900 123 456</p>
+                        <p class="font-bold text-lg text-background-dark dark:text-white">+371 67 000 000</p>
                     </div>
                 </div>
 
@@ -222,28 +198,8 @@
                     </div>
                     <div>
                         <p class="text-xs uppercase text-background-dark/40 dark:text-white/40 font-bold tracking-widest mb-1">Escríbenos</p>
-                        <p class="font-bold text-lg text-background-dark dark:text-white">hola@saboresdecasa.com</p>
+                        <p class="font-bold text-lg text-background-dark dark:text-white">sveiki@saboresdeletonia.com</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mx-6 mb-20">
-            <div class="bg-background-dark dark:bg-black text-background-light p-10 md:p-16 rounded-[2.5rem] relative overflow-hidden max-w-6xl mx-auto shadow-2xl">
-                <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-                    <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="100" cy="0" r="50" fill="currentColor"/></svg>
-                </div>
-
-                <div class="relative z-10 max-w-2xl mx-auto text-center space-y-8">
-                    <h3 class="text-3xl md:text-4xl font-bold font-display leading-tight">Sé el primero en probarlo</h3>
-                    <p class="text-background-light/60 text-lg">Suscríbete a nuestro boletín para recibir una invitación exclusiva a nuestra pre-apertura y descuentos especiales.</p>
-
-                    <form onsubmit="event.preventDefault();" class="flex flex-col md:flex-row gap-4">
-                        <input type="email" placeholder="Tu correo electrónico" class="flex-1 bg-white/10 border border-white/20 rounded-xl px-6 py-4 focus:ring-2 focus:ring-primary focus:border-transparent text-white placeholder-white/40 backdrop-blur-sm transition-all outline-none">
-                        <button type="submit" class="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-primary/50 whitespace-nowrap">
-                            Suscribirme
-                        </button>
-                    </form>
                 </div>
             </div>
         </section>
@@ -253,38 +209,22 @@
                 <div class="flex flex-col items-center gap-4">
                     <div class="flex items-center gap-2">
                         <span class="text-primary text-3xl"><i class="material-icons">restaurant</i></span>
-                        <span class="font-bold text-2xl tracking-tight text-primary font-display">Sabores de Casa</span>
+                        <span class="font-bold text-2xl tracking-tight text-primary font-display">Sabores de Letonia</span>
                     </div>
                     <p class="text-sm text-background-dark/60 dark:text-background-light/60 max-w-md leading-relaxed">
-                        Auténtica gastronomía mexicana, servida con amor y tradición desde 2024. Un homenaje a nuestras raíces y al buen comer.
+                        Auténtica gastronomía letona, servida con amor y tradición desde 2024.
                     </p>
                 </div>
 
-                <div class="flex gap-6">
-                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 flex items-center justify-center text-primary shadow-md hover:shadow-lg hover:-translate-y-1 transition-all">
-                        <i class="material-icons text-xl">facebook</i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 flex items-center justify-center text-primary shadow-md hover:shadow-lg hover:-translate-y-1 transition-all">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 flex items-center justify-center text-primary shadow-md hover:shadow-lg hover:-translate-y-1 transition-all">
-                        <i class="material-icons text-xl">share</i>
-                    </a>
-                </div>
-
                 <div class="pt-8 border-t border-primary/10 w-full text-center text-[10px] uppercase tracking-widest text-background-dark/40 dark:text-background-light/40">
-                    © 2024 Sabores de Casa. Todos los derechos reservados.
+                    © <span id="current-year">2024</span> Sabores de Letonia. Todos los derechos reservados.
                 </div>
             </div>
         </footer>
 
-        <div class="fixed bottom-6 left-6 right-6 z-40 md:hidden">
-            <button class="w-full bg-primary text-white font-bold py-4 rounded-2xl shadow-2xl shadow-primary/40 flex items-center justify-center gap-3 active:scale-95 transition-transform backdrop-blur-md">
-                <i class="material-icons">event_seat</i>
-                <span>Reservar Mesa</span>
-            </button>
-        </div>
-
     </main>
+
+    <!-- JS Script -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>

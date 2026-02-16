@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biezpienmaize (Pastel de Requesón) - Sabores de Letonia</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#9E3039", /* Latvian Carmine */
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "sans": ["Lato", "sans-serif"],
+                        "serif": ["Noto Serif", "serif"],
+                        "display": ["Noto Serif", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-background-dark dark:text-background-light selection:bg-primary/30 min-h-screen">
+
+    <header>
+        <nav class="sticky top-0 w-full z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/10">
+            <div class="px-6 py-4 flex justify-between items-center relative">
+                <a href="../index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="text-primary text-2xl"><i class="material-icons">restaurant</i></span>
+                    <span class="font-bold text-xl tracking-tight text-primary font-display">Sabores de Letonia</span>
+                </a>
+
+                <button id="mobile-menu-btn" class="md:hidden text-primary p-2 hover:bg-primary/10 rounded transition-colors focus:outline-none">
+                    <i class="material-icons text-3xl">menu</i>
+                </button>
+
+                <div id="mobile-menu" class="absolute md:static top-full left-0 w-full md:w-auto bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-none border-primary/10 p-6 md:p-0 flex-col md:flex-row gap-6 md:gap-8 items-center font-medium shadow-lg md:shadow-none hidden md:flex">
+                    <a href="../index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Inicio</a>
+                    <a href="../menu.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Menú</a>
+                    <a href="piragi.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Pīrāgi</a>
+                    <a href="zirni.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Zirņi</a>
+                    <a href="maize.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Maize</a>
+                    <a href="#" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-bold shadow-md shadow-primary/20 w-full md:w-auto text-center block md:inline-block">Reservar</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto pb-20">
+
+        <!-- Hero Recipe -->
+        <article class="px-6 pt-8 pb-12">
+            <div class="rounded-3xl overflow-hidden shadow-2xl relative h-64 md:h-96 mb-8 group">
+                <img src="../img/489c58f7db247402c366b32a303fc406.png" alt="Biezpienmaize (Pastel de Requesón)" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                    <div class="flex gap-4 mb-4 text-white/90 font-medium text-sm">
+                        <span class="flex items-center gap-1 bg-black/30 backdrop-blur-md px-3 py-1 rounded-full border border-white/10"><i class="material-icons text-sm">schedule</i> 60 min</span>
+                        <span class="flex items-center gap-1 bg-black/30 backdrop-blur-md px-3 py-1 rounded-full border border-white/10"><i class="material-icons text-sm">bar_chart</i> Media</span>
+                        <span class="flex items-center gap-1 bg-primary px-3 py-1 rounded-full text-white font-bold"><i class="material-icons text-sm">star</i> 4.8</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-bold font-display text-white mb-2 leading-tight shadow-black drop-shadow-lg">Biezpienmaize (Pastel de Requesón)</h1>
+                </div>
+            </div>
+
+            <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12 font-light border-l-4 border-primary pl-6">
+                Un pastel clásico de las cafeterías letonas. Base de masa quebrada con un relleno suave de requesón y pasas.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Ingredients -->
+                <div class="md:col-span-1 space-y-6">
+                    <h3 class="text-2xl font-bold font-display text-primary flex items-center gap-2">
+                        <i class="material-icons">shopping_basket</i> Ingredientes
+                    </h3>
+                    <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></span><span>Para la base: 200g harina, 100g mantequilla, 1 huevo, 2 cdas azúcar</span></li><li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></span><span>500g de requesón (biezpiens) seco</span></li><li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></span><span>3 huevos</span></li><li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></span><span>150g de azúcar</span></li><li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></span><span>100g de pasas</span></li><li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></span><span>1 cucharada de harina o sémola</span></li><li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></span><span>Ralladura de limón</span></li>
+                    </ul>
+                </div>
+
+                <!-- Steps -->
+                <div class="md:col-span-2 space-y-8">
+                    <h3 class="text-2xl font-bold font-display text-primary flex items-center gap-2">
+                        <i class="material-icons">restaurant_menu</i> Preparación
+                    </h3>
+                    <div class="space-y-8">
+
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 text-primary font-bold rounded-full flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:text-white transition-colors">
+                    1
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 pt-2 leading-relaxed">Mezcla los ingredientes de la base hasta formar una masa. Forra un molde rectangular y refrigera 30 min.</p>
+            </div>
+
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 text-primary font-bold rounded-full flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:text-white transition-colors">
+                    2
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 pt-2 leading-relaxed">Prehornea la base a 180°C durante 10 minutos.</p>
+            </div>
+
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 text-primary font-bold rounded-full flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:text-white transition-colors">
+                    3
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 pt-2 leading-relaxed">Bate los huevos con el azúcar hasta que espumen. Añade el requesón, la sémola, la ralladura y las pasas.</p>
+            </div>
+
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 text-primary font-bold rounded-full flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:text-white transition-colors">
+                    4
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 pt-2 leading-relaxed">Vierte la mezcla sobre la base precocida.</p>
+            </div>
+
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 text-primary font-bold rounded-full flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:text-white transition-colors">
+                    5
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 pt-2 leading-relaxed">Hornea a 180°C durante 35-40 minutos hasta que el relleno esté firme y dorado.</p>
+            </div>
+
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 text-primary font-bold rounded-full flex items-center justify-center border border-primary/20 group-hover:bg-primary group-hover:text-white transition-colors">
+                    6
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 pt-2 leading-relaxed">Deja enfriar y corta en cuadrados.</p>
+            </div>
+
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <div class="border-t border-gray-200 dark:border-white/10 mx-6 pt-12 text-center">
+            <a href="../menu.html" class="inline-flex items-center gap-2 text-primary font-bold hover:underline text-lg">
+                <i class="material-icons">arrow_back</i> Volver al Menú
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-background-dark/50 py-10 px-6 text-center border-t border-gray-200 dark:border-primary/5 pb-24 md:pb-10">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">© <span id="current-year">2024</span> Sabores de Letonia.</p>
+    </footer>
+
+    <!-- JS Script -->
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
